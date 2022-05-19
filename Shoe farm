@@ -1,0 +1,15 @@
+
+                pcall(function()
+                    for i, v in pairs(Workspace.Ignored.Drop:GetChildren()) do
+                        if v.Name == "MeshPart" then
+                            LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame * CFrame.new(0, 2, 0)
+                            local ShoeDistance = (v.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                            if ShoeDistance < 25 then
+                                fireclickdetector(v.ClickDetector)
+                            end
+                        else
+                            fireclickdetector(Workspace.Ignored["Clean the shoes on the floor and come to me for cash"].ClickDetector)
+                        end
+                    end
+                end)
+            end
